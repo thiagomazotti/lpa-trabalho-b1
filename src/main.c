@@ -104,3 +104,38 @@ double valor_base_distancia(double distancia) {
     }
     return 25.00;
 }
+
+double percentual_peso(double peso) {
+    if (peso <= 2) {
+        return 0.00;
+    }
+    if (peso <= 5) {
+        return 0.05;
+    }
+    if (peso <= 10) {
+        return 0.10;
+    }
+    return 0.20;
+}
+
+double percentual_modalidade(int modalidade) {
+    if (modalidade == MODALIDADE_EXPRESSA) {
+        return 0.15;
+    }
+    if (modalidade == MODALIDADE_PRIORITARIA) {
+        return 0.30;
+    }
+    return 0.00;
+}
+
+double calcular_valor_final(double distancia, double peso, int modalidade,
+                            int protecao, int tentativas) {
+    double subtotal = valor_base_distancia(distancia) + distancia * TARIFA_POR_KM;
+    double adicional_peso = subtotal * percentual_peso(peso);
+    double adicional_modalidade = subtotal * percentual_modalidade(modalidade);
+    double valor_protecao = protecao ? VALOR_PROTECAO : 0.0;
+    double valor_tentativas = tentativas * VALOR_TENTATIVA_ADICIONAL;
+
+    return subtotal + adicional_peso + adicional_modalidade
+           + valor_protecao + valor_tentativas;
+}
