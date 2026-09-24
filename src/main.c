@@ -139,3 +139,65 @@ double calcular_valor_final(double distancia, double peso, int modalidade,
     return subtotal + adicional_peso + adicional_modalidade
            + valor_protecao + valor_tentativas;
 }
+void exibir_resumo(int quantidade, double total, int economicas, int expressas,
+                   int prioritarias, double maior, double menor) {
+    printf("\n===== RESUMO DA SESSAO =====\n");
+    printf("Entregas processadas: %d\n", quantidade);
+    printf("Valor total: R$ %.2f\n", total);
+    printf("Valor medio: R$ %.2f\n", total / quantidade);
+    printf("Entregas Economicas: %d\n", economicas);
+    printf("Entregas Expressas: %d\n", expressas);
+    printf("Entregas Prioritarias: %d\n", prioritarias);
+    printf("Maior valor de entrega: R$ %.2f\n", maior);
+    printf("Menor valor de entrega: R$ %.2f\n", menor);
+}
+
+int main(void) {
+    int quantidade = 0;
+    int economicas = 0;
+    int expressas = 0;
+    int prioritarias = 0;
+    double total = 0.0;
+    double maior = 0.0;
+    double menor = 0.0;
+    int continuar;
+
+    printf("=== SIMULADOR DE ENTREGAS ===\n");
+
+    do {
+        double distancia = ler_distancia();
+        double peso = ler_peso();
+        int modalidade = ler_modalidade();
+        int protecao = ler_protecao();
+        int tentativas = ler_tentativas_adicionais();
+
+        double valor = calcular_valor_final(distancia, peso, modalidade,
+                                            protecao, tentativas);
+        printf("\nValor da entrega: R$ %.2f\n\n", valor);
+
+        quantidade++;
+        total += valor;
+
+        if (modalidade == MODALIDADE_ECONOMICA) {
+            economicas++;
+        } else if (modalidade == MODALIDADE_EXPRESSA) {
+            expressas++;
+        } else {
+            prioritarias++;
+        }
+
+        if (quantidade == 1 || valor > maior) {
+            maior = valor;
+        }
+        if (quantidade == 1 || valor < menor) {
+            menor = valor;
+        }
+
+        continuar = ler_continuar();
+    } while (continuar == 1);
+
+    exibir_resumo(quantidade, total, economicas, expressas, prioritarias,
+                  maior, menor);
+
+    return 0;
+}
