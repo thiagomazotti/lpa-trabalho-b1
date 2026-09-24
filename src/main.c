@@ -91,3 +91,16 @@ int ler_continuar(void) {
 
     return continuar;
 }
+
+double valor_base_distancia(double distancia) {
+    if (distancia <= 5) {
+        return 8.00;
+    }
+    if (distancia <= 15) {
+        return 12.00;
+    }
+    if (distancia <= 30) {
+        return 18.00;
+    }
+    return 25.00;
+}
