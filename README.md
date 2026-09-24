@@ -1,6 +1,6 @@
 # Trabalho B1 - Lógica de Programação e Algoritmos
 
-**Aluno(a):** [SEU NOME]
+**Aluno(a):** Thiago Gontijo mazotti
 **Disciplina:** Lógica de Programação e Algoritmos — 1º bimestre
 
 ## Descrição
@@ -45,10 +45,11 @@ gcc -Wall -Wextra -o simulador src/main.c
 
 ## Uso de Inteligência Artificial
 
-[PREENCHA COM SINCERIDADE. O roteiro exige: ferramenta utilizada; finalidade; exemplos
-dos prompts relevantes; quais sugestões foram aproveitadas; quais alterações ou
-correções você fez depois.]
-
+- Ferramenta: Claude (Anthropic).
+- Finalidade: gerar a versão do programa em C a partir do roteiro, explicar a lógica das funções e orientar o uso do Git e do GitHub.
+- Prompts relevantes: pedi ajuda com o trabalho do bimestre e depois pedi que o programa fosse feito a partir do roteiro.
+- Sugestões aproveitadas: a divisão em funções, as validações com do-while, o cálculo dos adicionais e o resumo final.
+- Alterações feitas por mim: montei o arquivo main.c em etapas, com um commit por etapa, e corrigi a posição de chaves e linhas em branco.
 Exemplo de estrutura:
 - Ferramenta: Claude (Anthropic).
 - Finalidade: [ex.: gerar uma versão inicial do programa e explicar a lógica].
