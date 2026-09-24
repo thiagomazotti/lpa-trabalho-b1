@@ -52,10 +52,14 @@ gcc -Wall -Wextra -o simulador src/main.c
 - Alterações feitas por mim: montei o arquivo main.c em etapas, com um commit por etapa, e corrigi a posição de chaves e linhas em branco.
 Exemplo de estrutura:
 - Ferramenta: Claude (Anthropic).
-- Finalidade: [ex.: gerar uma versão inicial do programa e explicar a lógica].
-- Prompts relevantes: [cole aqui os seus].
+- Finalidade:  gerar uma versão inicial do programa e explicar a lógica].
+- Prompts relevantes:
+  1. Enviei o PDF do roteiro e escrevi: "poderia me ajudar com meu trabalho bimestral de lógica de programação".
+  2. Pedi que o programa fosse feito para mim: "poderia realizá-lo para mim, tenho uma prova agora e a entrega é amanhã".
+  3. Perguntei como colocar o trabalho no GitHub e segui as orientações passo a passo (criar repositório, git init, commits, push), enviando prints dos erros e dúvidas.
+  4. Pedi ajuda para montar o main.c em partes, com um commit por etapa, e para corrigir a posição de chaves e linhas em branco.
 - Sugestões aproveitadas: [ex.: divisão em funções, uso de do-while nas validações].
-- Alterações feitas por mim: [descreva o que você mudou ou corrigiu].
+- Alterações feitas por mim: revisão do código base e adaptação do mesmo 
 
 ## Fontes consultadas
 
